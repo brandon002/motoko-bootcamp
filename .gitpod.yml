@@ -9,7 +9,7 @@ tasks:
       sudo apt-get install -q -y libunwind-dev
       sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
       sh -ci "npm i -g ic-mops"
-      sh -ci "mops initi"
+      sh -ci "mops i"
       sh -ci "dfx start --clean --background"
       sh -ci "dfx stop"
 
