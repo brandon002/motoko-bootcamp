@@ -4,6 +4,10 @@
       "main": "src/dao/main.mo",
       "type": "motoko"
     },
+    "webpage": {
+      "main": "src/main.mo",
+      "type": "motoko"
+    },
     "token": {
       "main": "src/token_faucet/main.mo",
       "type": "motoko"

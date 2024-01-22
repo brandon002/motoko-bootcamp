@@ -2,16 +2,6 @@ import Principal "mo:base/Principal";
 import Time "mo:base/Time";
 module {
 
-    public type Stats = {
-        name : Text; // The name of the DAO;
-        logo: Blob; // The logo of the DAO - encoded as a PNG
-        picture : Blob; // A picture reprenting the DAO - encoded as a PNG
-        numberOfMembers : Nat; // The number of members in the DAO
-        manifesto : Text; // The manifesto of the DAO
-        socialLinkDAO: Text; // An URL to the DAO's social media page (e.g. Twitter/ OpenChat / Discord / Telegram / DAO's website)
-        socialLinkBuilder: Text; // An URL to the DAO's creator social media page (e.g. Twitter/ OpenChat / Personal Blog)
-    };
-
     public type Role = {
         #Student;
         #Graduate;
@@ -27,7 +17,8 @@ module {
 
     public type ProposalContent = {
         #ChangeManifesto : Text; // Change the manifesto to the provided text
-        #AddMentor : Principal; // Upgrade the member to a mentor with the provided principal 
+        #AddGoal : Text;
+        #AddMentor : Principal; // Upgrade the member to a mentor with the provided principal
     };
 
     public type ProposalStatus = {
@@ -38,7 +29,8 @@ module {
 
     public type Vote = {
         member : Principal; // The member who voted
-        vote : Bool; // true = yes, false = no
+        votingPower : Nat;
+        yesOrNo : Bool; // true = yes, false = no
     };
 
     public type Proposal = {
@@ -46,8 +38,9 @@ module {
         creator : Principal; // The member who created the proposal
         created : Time.Time; // The time the proposal was created
         executed : ?Time.Time; // The time the proposal was executed or null if not executed
-        votes : [Vote]; // The votes on the proposal so far 
-        status : ProposalStatus;  // The current status of the proposal
+        votes : [Vote]; // The votes on the proposal so far
+        voteScore : Int; // A
+        status : ProposalStatus; // The current status of the proposal
     };
 
     public type HeaderField = (Text, Text);
@@ -84,4 +77,4 @@ module {
         body : Blob;
         token : ?StreamingCallbackToken;
     };
-}
+};
