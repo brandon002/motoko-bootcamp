@@ -84,11 +84,7 @@ They are 3 types of proposal:
 
 > You can decide to hardcode the initial setup or create an external that will be executed canister upon deployment.
 
-8. **Live Deployment**
-
-Contrary to previous projects, this project needs to be deployed on the **Internet Computer** (Playground won't be accepted).
-
-9. **Token Faucet**
+8. **Token Faucet**
 
 You are required to use the **Motoko Bootcamp Token**, a free, educational token faucet. It allows unlimited minting but holds no real economic value; it's solely for educational use.
 
@@ -101,7 +97,7 @@ You'll need to use the Faucet canister to:
 - Mint tokens when a new member joins your DAO.
 - Burn tokens when a new proposal is created.
 
-10. **Stable Structure**
+9. **Stable Structure**
 
 Your project will make use of stable data-structures. The aim is to ensure that your DAO can be upgraded in the future without losing any data.
 
