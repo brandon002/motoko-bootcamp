@@ -5,7 +5,7 @@
       "type": "motoko"
     },
     "webpage": {
-      "main": "src/main.mo",
+      "main": "src/webpage/main.mo",
       "type": "motoko"
     },
     "token": {

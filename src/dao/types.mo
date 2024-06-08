@@ -7,7 +7,14 @@ module {
         #Graduate;
         #Mentor;
     };
-
+    public type Stats = {
+        name : Text;
+        manifesto : Text;
+        goals : [Text];
+        members : [Text];
+        // logo : Text;
+        numberOfMembers : Nat;
+    };
     public type Member = {
         name : Text;
         role : Role;
@@ -34,12 +41,13 @@ module {
     };
 
     public type Proposal = {
+        id : ProposalId; // The unique identifier of the proposal
         content : ProposalContent; // The content of the proposal
         creator : Principal; // The member who created the proposal
         created : Time.Time; // The time the proposal was created
         executed : ?Time.Time; // The time the proposal was executed or null if not executed
         votes : [Vote]; // The votes on the proposal so far
-        voteScore : Int; // A
+        voteScore : Int; // The current score of the proposal based on the votes
         status : ProposalStatus; // The current status of the proposal
     };
 
